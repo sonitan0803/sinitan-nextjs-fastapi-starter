@@ -1,7 +1,6 @@
 from fastapi import FastAPI
+from api.routers  import users  # routersをインポート
 
 app = FastAPI()
 
-@app.get("/api/python")
-def hello_world():
-    return {"message": "書き換えてみたンゴよ"}
+app.include_router(users.router)
